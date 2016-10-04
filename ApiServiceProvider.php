@@ -15,7 +15,6 @@ class ApiServiceProvider extends ServiceProvider
     {
         //
         $this->app->make('Pixan\Api\Controllers\ApiController');
-		$this->app->make('Pixan\Api\Transformers\Transformer');
     }
 
     /**
