@@ -1,0 +1,11 @@
+{
+    "name": "pixan/api",
+    "description": "Pixan API",
+    "authors": [
+        {
+            "name": "Guillermo Villalobos",
+            "email": "guillermo@dvlop.mx"
+        }
+    ],
+    "require": {}
+}
