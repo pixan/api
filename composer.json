@@ -7,5 +7,10 @@
             "email": "guillermo@dvlop.mx"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Pixan\\Api\\": "src/"
+        }
+    }
 }
