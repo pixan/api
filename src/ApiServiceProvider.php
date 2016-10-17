@@ -15,7 +15,9 @@ class ApiServiceProvider extends ServiceProvider
     {
 		$this->publishes([
             __DIR__.'/config/pixanapi.php' => config_path('pixanapi.php'),
+			__DIR__.'/migrations/2016_10_17_220629_create_pixan_api_logs_table.php' => 'database/migrations/2016_10_17_220629_create_pixan_api_logs_table.php'
         ]);
+
         $this->app->make('Pixan\Api\Controllers\ApiController');
 		$this->app->make('Illuminate\Contracts\Http\Kernel')
 		   ->pushMiddleware('Pixan\Api\Middleware\LogRequest');
