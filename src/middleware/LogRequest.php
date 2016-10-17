@@ -9,7 +9,9 @@ class LogRequest
 {
 	public function handle($request, Closure $next)
     {
-		die('dis request');
+		if (config('pixanapi.options.log_requests')) {
+			die('dis request');
+		}
 		return $next($request);
     }
 }

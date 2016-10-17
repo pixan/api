@@ -13,7 +13,9 @@ class ApiServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+		$this->publishes([
+            __DIR__.'/config/pixanapi.php' => config_path('pixanapi.php'),
+        ]);
         $this->app->make('Pixan\Api\Controllers\ApiController');
 		$this->app->make('Illuminate\Contracts\Http\Kernel')
 		   ->pushMiddleware('Pixan\Api\Middleware\LogRequest');
@@ -27,5 +29,8 @@ class ApiServiceProvider extends ServiceProvider
     public function register()
     {
         //
+		$this->mergeConfigFrom(
+            __DIR__.'/config/pixanapi.php', 'pixanapi'
+        );
     }
 }
