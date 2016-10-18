@@ -15,6 +15,6 @@ return [
     | - log_requests      : true or false
     */
     'options' => [
-        'log_requests'       => true,
+        'log_requests'       => false,
     ]
 ];
