@@ -41,7 +41,7 @@ class ApiServiceProvider extends ServiceProvider
 	public function registerHelpers()
 	{
 	    // Load the helpers in app/Http/helpers.php
-	    if (file_exists($file = app_path('helpers/helpers.php')))
+	    if (file_exists($file = __DIR__.'/helpers/helpers.php'))
 	    {
 	        require $file;
 	    }
