@@ -9,7 +9,7 @@ if ( ! function_exists('pathForAssetWithId')){
             $folders = str_split($id);
             array_pop($folders);
 
-            return implode("/", $folders)."/".empty($file) ? $file : "";
+            return implode("/", $folders)."/".(empty($file) ? "" : $file);
         }
     }
 }
