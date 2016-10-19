@@ -16,6 +16,8 @@ class CreatePixanApiLogsTable extends Migration
         //
 		Schema::create('pixan_api_logs', function(Blueprint $table){
 			$table->increments('id');
+			$table->text('url');
+			$table->text('method');
 			$table->text('headers');
 			$table->text('inputs');
             $table->timestamps();

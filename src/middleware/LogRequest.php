@@ -11,6 +11,8 @@ class LogRequest
     {
 		if (config('pixanapi.options.log_requests')) {
 			\DB::table('pixan_api_logs')->insert([
+				'url' => $request->url(),
+				'method' => $request->method(),
 				'headers' => json_encode($request->header()),
 				'inputs' => json_encode($request->all()),
 				"created_at" =>  \Carbon\Carbon::now(),
