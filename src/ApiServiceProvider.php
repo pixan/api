@@ -22,7 +22,7 @@ class ApiServiceProvider extends ServiceProvider
 
 		$this->app->make('Illuminate\Contracts\Http\Kernel')
 		   ->pushMiddleware('Pixan\Api\Middleware\LogRequest');
-
+		$this->registerHelpers();
     }
 
     /**
@@ -37,4 +37,13 @@ class ApiServiceProvider extends ServiceProvider
             __DIR__.'/config/pixanapi.php', 'pixanapi'
         );
     }
+
+	public function registerHelpers()
+	{
+	    // Load the helpers in app/Http/helpers.php
+	    if (file_exists($file = app_path('helpers/helpers.php')))
+	    {
+	        require $file;
+	    }
+	}
 }
